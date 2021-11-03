@@ -1,19 +1,5 @@
 #include <stdio.h>
 
-int main() {
-
-  int testarr[5] = {1,2,3,4,5};
-  printf("array1: ");
-  helper1(&testarr, (sizeof testarr/ sizeof 2));
-  int avge = helper2(&testarr, (sizeof testarr/ sizeof 2));
-  printf("avg: %d\n", avge);
-  int test2arr[5];
-  helper3(&testarr, &test2arr, (sizeof testarr/ sizeof 2));
-  printf("array2: ");
-  helper1(&test2arr, (sizeof testarr/ sizeof 2));
-
-}
-
 int helper1(int* ap, int size) {
 
   int *cp;
@@ -52,3 +38,18 @@ int helper3(int* ap, int* bp, int size) {
   return 0;
 
 }
+
+int main() {
+
+  int testarr[5] = {1,2,3,4,5};
+  printf("array1: ");
+  helper1(testarr, (sizeof(testarr)/ sizeof(int)));
+  int avge = helper2(testarr, (sizeof testarr/ sizeof 2));
+  printf("avg: %d\n", avge);
+  int test2arr[5];
+  helper3(testarr, test2arr, (sizeof testarr/ sizeof 2));
+  printf("array2: ");
+  helper1(test2arr, (sizeof testarr/ sizeof 2));
+
+}
+
